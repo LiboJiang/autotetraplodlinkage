@@ -1,4 +1,7 @@
 
+source("auto_est1.r")
+source("auto_sim1.R")
+source("auto_util1.R")
 
 dat <- read.csv("example.csv")[,-1]
 
