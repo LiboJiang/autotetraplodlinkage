@@ -3,7 +3,7 @@
 
 library(mappoly)
 
-tetra.solcap <- read_geno_csv(file.in  = "../Data/tetra_1_solcap.csv", ploidy = 4)
+tetra.solcap <- read_geno_csv(file.in  = "tetra_1_solcap.csv", ploidy = 4)
 
 all.mrk <- make_seq_mappoly(tetra.solcap, 'all')
 red.mrk <- elim_redundant(all.mrk)
