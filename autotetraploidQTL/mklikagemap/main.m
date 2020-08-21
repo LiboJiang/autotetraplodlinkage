@@ -1,0 +1,74 @@
+
+%%%
+%%% cpt lr, choose linkage phase
+%%%
+
+clear;
+clc;
+
+%loaddata
+
+load k5Tdatamk
+crtfreqs;
+clear coef
+
+
+% for mmk1=strm:intv1:(length(datamk(1,:))-2)
+%     for mmk2=(mmk1+1):intv2:(length(datamk(1,:))-1)
+%         for mmk3=(mmk2+1):intv3:(length(datamk(1,:)))
+
+
+            mmk1=8;mmk2=152;mmk3=183;
+                        
+samp=zeros(2,2,2);
+sn=0;
+
+for i=1:length(datamk(:,1))
+    if sum(datamk(i,[mmk1,mmk2,mmk3])==[9,9,9])==0
+        sn=sn+1;
+        if datamk(i,mmk1)==1&&datamk(i,mmk2)==1&&datamk(i,mmk3)==1; samp(1,1,1)=samp(1,1,1)+1; end
+        if datamk(i,mmk1)==1&&datamk(i,mmk2)==1&&datamk(i,mmk3)==0; samp(1,1,2)=samp(1,1,2)+1; end
+        if datamk(i,mmk1)==1&&datamk(i,mmk2)==0&&datamk(i,mmk3)==1; samp(1,2,1)=samp(1,2,1)+1; end
+        if datamk(i,mmk1)==1&&datamk(i,mmk2)==0&&datamk(i,mmk3)==0; samp(1,2,2)=samp(1,2,2)+1; end
+        if datamk(i,mmk1)==0&&datamk(i,mmk2)==1&&datamk(i,mmk3)==1; samp(2,1,1)=samp(2,1,1)+1; end
+        if datamk(i,mmk1)==0&&datamk(i,mmk2)==1&&datamk(i,mmk3)==0; samp(2,1,2)=samp(2,1,2)+1; end
+        if datamk(i,mmk1)==0&&datamk(i,mmk2)==0&&datamk(i,mmk3)==1; samp(2,2,1)=samp(2,2,1)+1; end
+        if datamk(i,mmk1)==0&&datamk(i,mmk2)==0&&datamk(i,mmk3)==0; samp(2,2,2)=samp(2,2,2)+1; end
+    end
+end
+samplesize=sn;
+
+% look
+lsamp(1,1)=samp(1,1,1);lsamp(1,2)=samp(1,1,2);lsamp(2,1)=samp(1,2,1);lsamp(2,2)=samp(1,2,2);
+lsamp(3,1)=samp(2,1,1);lsamp(3,2)=samp(2,1,2);lsamp(4,1)=samp(2,2,1);lsamp(4,2)=samp(2,2,2);
+
+coefs=coefs11;cptpar;tempr(1,:)=[11,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(1,1)
+coefs=coefs12;cptpar;tempr(2,:)=[12,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(2,1)
+coefs=coefs13;cptpar;tempr(3,:)=[13,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(3,1)
+coefs=coefs14;cptpar;tempr(4,:)=[14,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(4,1)
+coefs=coefs21;cptpar;tempr(5,:)=[21,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(5,1)
+coefs=coefs22;cptpar;tempr(6,:)=[22,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(6,1)
+coefs=coefs23;cptpar;tempr(7,:)=[23,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(7,1)
+coefs=coefs24;cptpar;tempr(8,:)=[24,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(8,1)
+coefs=coefs25;cptpar;tempr(9,:)=[25,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(9,1)
+coefs=coefs26;cptpar;tempr(10,:)=[26,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(10,1)
+coefs=coefs27;cptpar;tempr(11,:)=[27,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(11,1)
+coefs=coefs28;cptpar;tempr(12,:)=[28,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(12,1)
+coefs=coefs31;cptpar;tempr(13,:)=[31,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(13,1)
+coefs=coefs32;cptpar;tempr(14,:)=[32,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(14,1)
+coefs=coefs33;cptpar;tempr(15,:)=[33,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(15,1)
+coefs=coefs34;cptpar;tempr(16,:)=[34,lh,ea,er,(er(1)+er(2)-er(3))/(2*er(1)*er(2)),ephi1,ephi2,epsi1,epsi2];clear lh ea er efreqs eg ephi1 ephi2 epsi1 epsi2;tempr(16,1)
+
+result1=[mmk1,mmk2,mmk3,tempr(tempr(:,2)==max(tempr(:,2)),1:9)];
+result{mmk1,mmk2,mmk3}=result1;
+
+
+
+fprintf('rr=%d# %d %d %d---%d  lh=%f    Para=%f %f %f   %f %f %f\n',rr,mmk1,mmk2,mmk3,result1(4),result1(5),result1(6),result1(7),result1(8),result1(9),result1(10),result1(11))
+clear i result1 samp sn tempr
+% 
+%         end
+%     end
+% end
+
+

@@ -1,0 +1,13 @@
+
+% 
+% dd=d(:,1:500);
+% ddd=sort(dd(2,:));
+% 
+% cp(3,3)=ddd(:,length(ddd)-24);
+
+
+
+i=2;j=3;
+
+
+power(i,j)=sum(SimuResult(2,101:200)>cp(i,j));
