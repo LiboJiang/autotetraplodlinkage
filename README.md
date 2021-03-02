@@ -54,15 +54,15 @@ pmap <- matrix(c(2,1,2,1,1,2,1,2,1,2,1,2,1,2,1,2),nrow=4,byrow=T)
 
 index <- matrix(c(1,2,3,4，3,2,1,4,1,2,3,4,3,2,1,4),nrow=4,byrow=T)
                   
-# data simulation
+#data simulation
 
 two_z <- Frz1_two_sim1(ff1=f1,n=500,m=50,pmap=pmap,index=index)
 
 #f1 indicates the f frequency, n indicates the sample size, m indicates the number of markers.
 
-# estimate recombination fraction and DR
-ret_two <-two_rfz_phase_g2(M1=two_z$zm1[,i],M2=two_z$zm2[,i],
-pmap=pmap,index=index1)
+#estimate recombination fraction and DR
+
+ret_two <-two_rfz_phase_g2(M1=two_z$zm1[,i],M2=two_z$zm2[,i],pmap=pmap,index=index1)
 
 #Three-point model
 #load functions
