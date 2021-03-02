@@ -29,28 +29,47 @@ solcap_snp_c2_23717       1    1     2       1       2        1
 
 Five genotypes (aaaa=0, Aaaa=1,AAaa=2, AAAa=3, AAAA=4) and missing data (coded as 9 ) are valid marker values. 
 
+3.	Computer simulation
 
-1.	Computer simulation
 #Two-point model
+
 #load functions
+
 source("auto_sim.R") 
+
 source("auto_est.R")
+
 source("auto-debug.R")
 
+
 #Simulation for a=0.05,b=0.1,r=0.05
+
 #1111=0, 1112=1, 1122=2, 1222=3, 2222=4
+
 #set the marker type
+
 pmap <- matrix(c(2,1,2,1,
+
                  1,2,1,2,
+                 
                  1,2,1,2,
+                 
                  1,2,1,2),nrow=4,byrow=T)
+                 
 #set the linkage phase
+
 index <- matrix(c(1,2,3,4,
+
                   3,2,1,4,
+                  
                   1,2,3,4,
+                  
                   3,2,1,4),nrow=4,byrow=T)
+                  
 # data simulation
+
 two_z <- Frz1_two_sim1(ff1=f1,n=500,m=50,pmap=pmap,index=index)
+
 #f1 indicates the f frequency, n indicates the sample size, m indicates the number of markers.
 
 # estimate recombination fraction and DR
