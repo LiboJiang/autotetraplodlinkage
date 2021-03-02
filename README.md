@@ -49,21 +49,15 @@ source("auto-debug.R")
 #set the marker type
 
 pmap <- matrix(c(2,1,2,1,
-
-                 1,2,1,2,
-                 
-                 1,2,1,2,
-                 
+                 1,2,1,2,              
+                 1,2,1,2,             
                  1,2,1,2),nrow=4,byrow=T)
                  
 #set the linkage phase
 
-index <- matrix(c(1,2,3,4,
-
-                  3,2,1,4,
-                  
-                  1,2,3,4,
-                  
+index <- matrix(c(1,2,3,4，
+                  3,2,1,4,                
+                  1,2,3,4,                
                   3,2,1,4),nrow=4,byrow=T)
                   
 # data simulation
