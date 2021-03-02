@@ -4,9 +4,9 @@ A General Framework for Statistical Linkage Analysis in Autotetraplod
 1.	Introduction
 At present, this package is used to linkage analysis in the full-sib of autotetraploid based on the two-point and three-point model. This guide gives some brief instructions on how to perform the tasks of linkage analysis by this package. The outline of this guide is as follows: 
 2.	Data format
-ID                        P1   P2  IND_1  IND_10  IND_100  IND_101
-solcap_snp_c2_23780       2    0     9       0       1        1
-solcap_snp_c2_23781       0    2     2       1       1        1
+ID                        P1   P2  IND_1  IND_10  IND_100  IND_101/n
+solcap_snp_c2_23780       2    0     9       0       1        1/n
+solcap_snp_c2_23781       0    2     2       1       1        1/n
 solcap_snp_c2_23803       1    1     2       1       2        1
 solcap_snp_c2_23804       0    2     1       1       1        1
 solcap_snp_c2_238045      0    2     1       1       1        1
