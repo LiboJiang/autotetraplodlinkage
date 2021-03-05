@@ -65,17 +65,18 @@ two_z <- Frz1_two_sim1(ff1=f1,n=500,m=50,pmap=pmap,index=index)
 ret_two <-two_rfz_phase_g2(M1=two_z$zm1[,i],M2=two_z$zm2[,i],pmap=pmap,index=index1)
 
 #Three-point model
+
 #load functions
+
 source("auto_three_util.R")
+
 source("auto_three_mai.R")
+
 source("phase-debug.R")
 
 #set the linkage phase
-index <- matrix(c(1,2,3,4,
-               1,3,2,4,
-               1,2,3,4,
-               4,3,2,1,
-               1,2,3,4,
+
+index <- matrix(c(1,2,3,4,1,3,2,4,1,2,3,4,4,3,2,1,1,2,3,4,
                1,4,2,3),nrow=6,byrow=T)
 
 #set the marker type
